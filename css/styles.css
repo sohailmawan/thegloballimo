@@ -76,24 +76,74 @@ html {
    RESPONSIVE DESIGN HELPERS
 ======================================== */
 
-/* Mobile-specific adjustments */
-@media (max-width: 768px) {
-    /* Services section mobile layout - maintain flex for sliding */
-    #services-track {
-        width: calc(100% * 6); /* All 6 cards in a row for mobile */
+/* Extra small mobile - 320px */
+@media (max-width: 320px) {
+    .hero-heading {
+        font-size: 32px !important;
     }
     
+    .hero-subheading {
+        font-size: 18px !important;
+    }
+    
+    .about-main-heading {
+        font-size: 28px !important;
+    }
+}
+
+/* Mobile-specific adjustments - up to 768px */
+@media (max-width: 768px) {
+    /* Services section mobile layout */
     #services-track > div {
-        flex: 0 0 calc(100% / 6); /* Each card still 1/6 width */
+        flex: 0 0 calc(100% - 2rem);
         margin-right: 1rem;
+    }
+    
+    /* Feature cards mobile adjustments */
+    .feature-card {
+        padding: 24px;
+        min-height: auto;
+    }
+    
+    .feature-card .feature-icon {
+        margin-bottom: 24px !important;
     }
 }
 
 /* Tablet-specific adjustments */
 @media (min-width: 769px) and (max-width: 1024px) {
-    #services-track {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
+    #services-track > div {
+        flex: 0 0 calc((100% - 24px) / 2);
+    }
+}
+
+/* Large desktop - 1440px */
+@media (min-width: 1440px) {
+    .hero-heading {
+        font-size: 72px;
+    }
+    
+    .hero-subheading {
+        font-size: 36px;
+    }
+    
+    .about-main-heading {
+        font-size: 52px;
+    }
+}
+
+/* Extra large desktop - 1920px */
+@media (min-width: 1920px) {
+    .hero-heading {
+        font-size: 84px;
+    }
+    
+    .hero-subheading {
+        font-size: 40px;
+    }
+    
+    .about-main-heading {
+        font-size: 56px;
     }
 }
 
@@ -128,6 +178,92 @@ html {
 .focus-ring:focus {
     outline: 2px solid #F15A29;
     outline-offset: 2px;
+}
+
+/* Improved focus states for all interactive elements */
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid #F15A29;
+    outline-offset: 2px;
+}
+
+/* Skip to content link for keyboard navigation */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #F15A29;
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .hero-overlay {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+}
+
+/* Cross-browser backdrop filter fallback */
+.backdrop-blur {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+/* Fallback for browsers without backdrop-filter support */
+@supports not (backdrop-filter: blur(4px)) {
+    header {
+        background-color: rgba(255, 255, 255, 0.98) !important;
+    }
+}
+
+/* WebP image fallbacks */
+.hero-bg {
+    background-image: url('assets/hero-image.jpg');
+}
+
+.no-webp .hero-bg {
+    background-image: url('assets/hero-image.jpg');
+}
+
+.webp .hero-bg {
+    background-image: url('assets/hero-image.webp');
+}
+
+/* Image error fallbacks */
+.image-error {
+    background-color: #f3f4f6;
+    border: 2px dashed #d1d5db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.image-error::before {
+    content: "Image not available";
+}
+
+/* Reduced motion support */
+.reduced-motion * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+}
+
+.reduced-motion {
+    scroll-behavior: auto !important;
 }
 
 /* ========================================
@@ -567,16 +703,17 @@ html {
     line-height: 18px !important;
 }
 
-/* Feature cards styling - Figma specs */
+/* Feature cards styling - Responsive Figma specs */
 .feature-card {
     box-sizing: border-box;
-    width: 332px;
-    height: 304px;
+    max-width: 332px;
+    min-height: 304px;
     padding: 40px;
     background: #FFFFFF;
     border: 1px solid #8C8C8C;
     border-radius: 24px;
     text-align: left !important;
+    width: 100%;
 }
 
 .feature-card .feature-icon {

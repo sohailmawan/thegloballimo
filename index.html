@@ -39,8 +39,11 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="font-body text-dark-grey bg-white">
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <!-- Header Navigation -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm nav-height-72">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-95 backdrop-blur shadow-sm nav-height-72">
         <nav class="h-full nav-spacing-40 flex items-center justify-between">
             <div class="flex items-center">
                 <img src="assets/ic_logo.svg" alt="The Global Limo" class="logo-height-24 w-auto">
@@ -56,7 +59,7 @@
             </div>
 
             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-btn" class="md:hidden p-2 text-dark-grey">
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-dark-grey" aria-label="Toggle mobile menu" aria-expanded="false">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
@@ -75,9 +78,11 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="relative hero-section flex items-center">
-        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('assets/hero-image.webp')"></div>
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="relative hero-section flex items-center" aria-label="Homepage hero section">
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat hero-bg" style="background-image: url('assets/hero-image.webp')"></div>
         <div class="absolute inset-0 hero-overlay"></div>
         
         <div class="relative z-10 w-full px-10 text-center hero-content">
@@ -88,7 +93,7 @@
             <p class="hero-subheading max-w-4xl mx-auto leading-relaxed hero-spacing-button hero-text-shadow hero-subheading-animate">
                 Your Premium Partner for Roadshows and Corporate Travel
             </p>
-            <button class="bg-dark-orange hover:bg-light-orange text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors hero-button-animate">
+            <button class="bg-dark-orange hover:bg-light-orange text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors hero-button-animate" aria-label="Book a ride with The Global Limo">
                 Book a Ride
             </button>
         </div>
@@ -117,9 +122,9 @@
             
             <!-- Row 4: Three Column Images (4:5:3 grid ratio) -->
             <div class="grid grid-cols-12 gap-6 about-images-row">
-                <img src="assets/about-image1.webp" alt="Luxury Vehicle" class="col-span-4 w-full object-cover rounded-lg about-image-1">
-                <img src="assets/about-image2.webp" alt="Professional Driver" class="col-span-5 w-full object-cover rounded-lg about-image-2">
-                <img src="assets/about-image3.webp" alt="Airport Terminal" class="col-span-3 w-full object-cover rounded-lg about-image-3">
+                <img src="assets/about-image1.webp" alt="Luxury Vehicle" class="col-span-4 w-full object-cover rounded-lg about-image-1" loading="lazy">
+                <img src="assets/about-image2.webp" alt="Professional Driver" class="col-span-5 w-full object-cover rounded-lg about-image-2" loading="lazy">
+                <img src="assets/about-image3.webp" alt="Airport Terminal" class="col-span-3 w-full object-cover rounded-lg about-image-3" loading="lazy">
             </div>
         </div>
     </section>
@@ -139,10 +144,10 @@
                     </h2>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <button id="prev-btn" class="services-arrow-btn">
+                    <button id="prev-btn" class="services-arrow-btn" aria-label="Previous service">
                         <img src="assets/arrow-prev.svg" alt="Previous">
                     </button>
-                    <button id="next-btn" class="services-arrow-btn">
+                    <button id="next-btn" class="services-arrow-btn" aria-label="Next service">
                         <img src="assets/arrow-next.svg" alt="Next">
                     </button>
                 </div>
@@ -152,7 +157,7 @@
                 <div id="services-track" class="transition-all duration-500 ease-in-out">
                     <!-- Corporate Travel -->
                     <div class="bg-white services-card overflow-hidden transition-all duration-300 transform hover:-translate-y-1">
-                        <img src="assets/corporate-travel-image.webp" alt="Corporate Travel" class="w-full h-80 object-cover">
+                        <img src="assets/corporate-travel-image.webp" alt="Corporate Travel" class="w-full h-80 object-cover" loading="lazy">
                         <div class="px-6 pb-6 pt-4">
                             <h3 class="text-xl font-bold mb-3 font-body text-dark-grey">Corporate Travel</h3>
                             <p class="text-dark-grey leading-relaxed font-body">Professional transportation solutions for corporate executives and business travelers requiring reliable and luxurious ground transportation.</p>
@@ -161,7 +166,7 @@
 
                     <!-- Events Logistics -->
                     <div class="bg-white services-card overflow-hidden transition-all duration-300 transform hover:-translate-y-1">
-                        <img src="assets/event-logistics-image.webp" alt="Events Logistics" class="w-full h-80 object-cover">
+                        <img src="assets/event-logistics-image.webp" alt="Events Logistics" class="w-full h-80 object-cover" loading="lazy">
                         <div class="px-6 pb-6 pt-4">
                             <h3 class="text-xl font-bold mb-3 font-body text-dark-grey">Events Logistics</h3>
                             <p class="text-dark-grey leading-relaxed font-body">Comprehensive transportation coordination for corporate events, conferences, and special occasions with seamless logistics management.</p>
@@ -170,7 +175,7 @@
 
                     <!-- Roadshows -->
                     <div class="bg-white services-card overflow-hidden transition-all duration-300 transform hover:-translate-y-1">
-                        <img src="assets/roadshows-image.webp" alt="Roadshows" class="w-full h-80 object-cover">
+                        <img src="assets/roadshows-image.webp" alt="Roadshows" class="w-full h-80 object-cover" loading="lazy">
                         <div class="px-6 pb-6 pt-4">
                             <h3 class="text-xl font-bold mb-3 font-body text-dark-grey">Roadshows</h3>
                             <p class="text-dark-grey leading-relaxed font-body">Specialized transportation services for financial roadshows and investor meetings, ensuring punctuality and professional presentation.</p>
@@ -179,7 +184,7 @@
 
                     <!-- VVIP Transport -->
                     <div class="bg-white services-card overflow-hidden transition-all duration-300 transform hover:-translate-y-1">
-                        <img src="assets/vvip-transport-image.webp" alt="VVIP Transport" class="w-full h-80 object-cover">
+                        <img src="assets/vvip-transport-image.webp" alt="VVIP Transport" class="w-full h-80 object-cover" loading="lazy">
                         <div class="px-6 pb-6 pt-4">
                             <h3 class="text-xl font-bold mb-3 font-body text-dark-grey">VVIP Transport</h3>
                             <p class="text-dark-grey leading-relaxed font-body">Exclusive transportation services for VIPs and high-profile clients with enhanced security and privacy measures.</p>
@@ -188,7 +193,7 @@
 
                     <!-- Airport Transfers -->
                     <div class="bg-white services-card overflow-hidden transition-all duration-300 transform hover:-translate-y-1">
-                        <img src="assets/airport-transfers-image.webp" alt="Airport Transfers" class="w-full h-80 object-cover">
+                        <img src="assets/airport-transfers-image.webp" alt="Airport Transfers" class="w-full h-80 object-cover" loading="lazy">
                         <div class="px-6 pb-6 pt-4">
                             <h3 class="text-xl font-bold mb-3 font-body text-dark-grey">Airport Transfers</h3>
                             <p class="text-dark-grey leading-relaxed font-body">Seamless airport transportation services with flight monitoring and meet-and-greet services for stress-free travel experiences.</p>
@@ -197,7 +202,7 @@
 
                     <!-- Air Aviation Transport -->
                     <div class="bg-white services-card overflow-hidden transition-all duration-300 transform hover:-translate-y-1">
-                        <img src="assets/air-aviation-transport-image.webp" alt="Air Aviation Transport" class="w-full h-80 object-cover">
+                        <img src="assets/air-aviation-transport-image.webp" alt="Air Aviation Transport" class="w-full h-80 object-cover" loading="lazy">
                         <div class="px-6 pb-6 pt-4">
                             <h3 class="text-xl font-bold mb-3 font-body text-dark-grey">Air Aviation Transport</h3>
                             <p class="text-dark-grey leading-relaxed font-body">Premium ground transportation to and from private aviation terminals and helicopter pads for seamless air travel connections.</p>
@@ -286,6 +291,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer id="contact" class="bg-white text-dark-grey pt-16 pb-10">
@@ -349,8 +355,10 @@
     </footer>
 
     <!-- JavaScript Files -->
+    <script src="js/feature-detection.js"></script>
     <script src="js/mobile-menu.js"></script>
     <script src="js/carousel.js"></script>
     <script src="js/active-navigation.js"></script>
+    <script src="js/link-validation.js"></script>
 </body>
 </html>

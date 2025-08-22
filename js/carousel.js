@@ -10,10 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const maxIndex = totalCards - visibleCards; // 3 (positions: 0,1,2,3)
 
     function updateCarousel() {
-        // Calculate card width including gap: (100% - 48px) / 3 + 24px gap
-        const cardWidth = `calc((100% - 48px) / 3 + 24px)`;
-        // For sliding, we need to move by one card width + gap
-        servicesTrack.style.transform = `translateX(calc(-${currentIndex} * (${cardWidth})))`;
+        // Calculate movement based on card width and gap
+        const moveDistance = `calc(${currentIndex} * (calc((100% - 48px) / 3) + 24px))`;
+        servicesTrack.style.transform = `translateX(-${moveDistance})`;
     }
 
     function updateButtonStates() {
