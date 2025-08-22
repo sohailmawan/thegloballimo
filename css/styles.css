@@ -376,9 +376,11 @@ a:focus {
     overflow: hidden; /* Ensure video doesn't overflow */
 }
 
-/* Hero video background */
+/* Hero video background with parallax */
 .hero-section video {
     z-index: 1; /* Behind overlay but above everything else */
+    transform: translateZ(0); /* Enable hardware acceleration */
+    transition: transform 0.1s ease-out; /* Smooth parallax transition */
 }
 
 /* Hero overlay - ensure it appears above video */
