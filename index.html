@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Global Limo - Luxury Ground Transportation</title>
+    <meta name="description" content="Global Excellence in Luxury Ground Transportation. Your Premium Partner for Roadshows and Corporate Travel.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Primary Colors
+                        'dark-orange': '#F15A29',
+                        'light-orange': '#F7941D',
+                        'dark-grey': '#4A4A4A',
+                        'med-grey': '#8C8C8C',
+                        'black': '#0D0D0D',
+                        'white': '#FFFFFF',
+                        // Secondary Colors
+                        'ivory-white': '#F9F7F2',
+                        'beige': '#E6D8C3',
+                        'light-grey': '#DDDDDD'
+                    },
+                    fontFamily: {
+                        'heading': ['Poppins', 'system-ui', 'sans-serif'],
+                        'body': ['Lato', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="font-body text-dark-grey bg-white">
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm nav-height-72">
+        <nav class="h-full nav-spacing-40 flex items-center justify-between">
+            <div class="flex items-center">
+                <img src="assets/ic_logo.svg" alt="The Global Limo" class="logo-height-24 w-auto">
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="nav-link nav-link-text text-dark-grey hover:text-dark-orange transition-colors" data-section="home">HOME</a>
+                <a href="#about" class="nav-link nav-link-text text-dark-grey hover:text-dark-orange transition-colors" data-section="about">ABOUT US</a>
+                <a href="#services" class="nav-link nav-link-text text-dark-grey hover:text-dark-orange transition-colors" data-section="services">SERVICES</a>
+                <a href="#locations" class="nav-link nav-link-text text-dark-grey hover:text-dark-orange transition-colors" data-section="locations">OUR LOCATIONS</a>
+                <a href="#contact" class="bg-dark-orange hover:bg-light-orange text-white px-6 py-2 rounded-full nav-contact-btn transition-colors nav-link-text" data-section="contact">CONTACT</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-dark-grey">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="nav-spacing-40 py-4 space-y-3">
+                <a href="#home" class="block nav-link nav-link-text text-dark-grey hover:text-dark-orange transition-colors" data-section="home">HOME</a>
+                <a href="#about" class="block nav-link nav-link-text text-dark-grey hover:text-dark-orange transition-colors" data-section="about">ABOUT US</a>
+                <a href="#services" class="block nav-link nav-link-text text-dark-grey hover:text-dark-orange transition-colors" data-section="services">SERVICES</a>
+                <a href="#locations" class="block nav-link nav-link-text text-dark-grey hover:text-dark-orange transition-colors" data-section="locations">OUR LOCATIONS</a>
+                <a href="#contact" class="block bg-dark-orange hover:bg-light-orange text-white px-6 py-2 rounded-full nav-contact-btn text-center w-fit nav-link-text" data-section="contact">CONTACT</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative hero-section flex items-center">
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('assets/hero-image.webp')"></div>
+        <div class="absolute inset-0 hero-overlay"></div>
+        
+        <div class="relative z-10 w-full px-10 text-center hero-content">
+            <h1 class="hero-heading font-bold font-heading hero-spacing-heading hero-text-shadow hero-heading-animate">
+                <span class="hero-heading-line1">Global Excellence in</span>
+                <span class="hero-heading-line2">Luxury Ground Transportation</span>
+            </h1>
+            <p class="hero-subheading max-w-4xl mx-auto leading-relaxed hero-spacing-button hero-text-shadow hero-subheading-animate">
+                Your Premium Partner for Roadshows and Corporate Travel
+            </p>
+            <button class="bg-dark-orange hover:bg-light-orange text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors hero-button-animate">
+                Book a Ride
+            </button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-black about-section-padding">
+        <div class="max-w-[1400px] mx-auto px-4 text-white">
+            <!-- Row 1: Small Orange Heading -->
+            <h3 class="about-small-heading text-dark-orange font-body">ABOUT US</h3>
+            
+            <!-- Row 2: Big Heading + Logo Symbol -->
+            <div class="flex items-start gap-6 about-heading-spacing">
+                <h2 class="about-main-heading font-heading text-beige about-heading-75">
+                    <span class="font-bold">The Global Limo:</span> <span class="font-normal">Redefining Luxury Transportation. Your Premium Partner for Roadshows and Corporate Travel.</span>
+                </h2>
+                <div class="about-logo-25">
+                    <img src="assets/ic_logo_symbol.svg" alt="Global Limo Symbol" class="about-logo-symbol">
+                </div>
+            </div>
+            
+            <!-- Row 3: Paragraph Text -->
+            <p class="about-paragraph text-white leading-relaxed about-paragraph-50">
+                We pride ourselves on providing world-class transportation services to meet the highest standards of excellence. From corporate events to personal occasions, we deliver unmatched service for the discerning traveler.
+            </p>
+            
+            <!-- Row 4: Three Column Images (4:5:3 grid ratio) -->
+            <div class="grid grid-cols-12 gap-6 about-images-row">
+                <img src="assets/about-image1.webp" alt="Luxury Vehicle" class="col-span-4 w-full object-cover rounded-lg about-image-1">
+                <img src="assets/about-image2.webp" alt="Professional Driver" class="col-span-5 w-full object-cover rounded-lg about-image-2">
+                <img src="assets/about-image3.webp" alt="Airport Terminal" class="col-span-3 w-full object-cover rounded-lg about-image-3">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-beige about-section-padding">
+        <div class="max-w-[1400px] mx-auto px-4">
+            <!-- Row 1: Small Orange Heading -->
+            <h3 class="about-small-heading text-dark-orange font-body">OUR SERVICES</h3>
+            
+            <!-- Row 2: Big Heading + Navigation Arrows -->
+            <div class="flex justify-between items-center about-heading-spacing">
+                <div>
+                    <h2 class="about-main-heading font-bold text-black font-heading">
+                        <span class="services-heading-line1">We Offer a Range of</span>
+                        <span class="services-heading-line2">Services to Meet Diverse Needs.</span>
+                    </h2>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="prev-btn" class="services-arrow-btn">
+                        <img src="assets/arrow-prev.svg" alt="Previous">
+                    </button>
+                    <button id="next-btn" class="services-arrow-btn">
+                        <img src="assets/arrow-next.svg" alt="Next">
+                    </button>
+                </div>
+            </div>
+
+            <div id="services-carousel" class="relative services-carousel-spacing">
+                <div id="services-track" class="transition-all duration-500 ease-in-out">
+                    <!-- Corporate Travel -->
+                    <div class="bg-white services-card overflow-hidden transition-all duration-300 transform hover:-translate-y-1">
+                        <img src="assets/corporate-travel-image.webp" alt="Corporate Travel" class="w-full h-80 object-cover">
+                        <div class="px-6 pb-6 pt-4">
+                            <h3 class="text-xl font-bold mb-3 font-body text-dark-grey">Corporate Travel</h3>
+                            <p class="text-dark-grey leading-relaxed font-body">Professional transportation solutions for corporate executives and business travelers requiring reliable and luxurious ground transportation.</p>
+                        </div>
+                    </div>
+
+                    <!-- Events Logistics -->
+                    <div class="bg-white services-card overflow-hidden transition-all duration-300 transform hover:-translate-y-1">
+                        <img src="assets/event-logistics-image.webp" alt="Events Logistics" class="w-full h-80 object-cover">
+                        <div class="px-6 pb-6 pt-4">
+                            <h3 class="text-xl font-bold mb-3 font-body text-dark-grey">Events Logistics</h3>
+                            <p class="text-dark-grey leading-relaxed font-body">Comprehensive transportation coordination for corporate events, conferences, and special occasions with seamless logistics management.</p>
+                        </div>
+                    </div>
+
+                    <!-- Roadshows -->
+                    <div class="bg-white services-card overflow-hidden transition-all duration-300 transform hover:-translate-y-1">
+                        <img src="assets/roadshows-image.webp" alt="Roadshows" class="w-full h-80 object-cover">
+                        <div class="px-6 pb-6 pt-4">
+                            <h3 class="text-xl font-bold mb-3 font-body text-dark-grey">Roadshows</h3>
+                            <p class="text-dark-grey leading-relaxed font-body">Specialized transportation services for financial roadshows and investor meetings, ensuring punctuality and professional presentation.</p>
+                        </div>
+                    </div>
+
+                    <!-- VVIP Transport -->
+                    <div class="bg-white services-card overflow-hidden transition-all duration-300 transform hover:-translate-y-1">
+                        <img src="assets/vvip-transport-image.webp" alt="VVIP Transport" class="w-full h-80 object-cover">
+                        <div class="px-6 pb-6 pt-4">
+                            <h3 class="text-xl font-bold mb-3 font-body text-dark-grey">VVIP Transport</h3>
+                            <p class="text-dark-grey leading-relaxed font-body">Exclusive transportation services for VIPs and high-profile clients with enhanced security and privacy measures.</p>
+                        </div>
+                    </div>
+
+                    <!-- Airport Transfers -->
+                    <div class="bg-white services-card overflow-hidden transition-all duration-300 transform hover:-translate-y-1">
+                        <img src="assets/airport-transfers-image.webp" alt="Airport Transfers" class="w-full h-80 object-cover">
+                        <div class="px-6 pb-6 pt-4">
+                            <h3 class="text-xl font-bold mb-3 font-body text-dark-grey">Airport Transfers</h3>
+                            <p class="text-dark-grey leading-relaxed font-body">Seamless airport transportation services with flight monitoring and meet-and-greet services for stress-free travel experiences.</p>
+                        </div>
+                    </div>
+
+                    <!-- Air Aviation Transport -->
+                    <div class="bg-white services-card overflow-hidden transition-all duration-300 transform hover:-translate-y-1">
+                        <img src="assets/air-aviation-transport-image.webp" alt="Air Aviation Transport" class="w-full h-80 object-cover">
+                        <div class="px-6 pb-6 pt-4">
+                            <h3 class="text-xl font-bold mb-3 font-body text-dark-grey">Air Aviation Transport</h3>
+                            <p class="text-dark-grey leading-relaxed font-body">Premium ground transportation to and from private aviation terminals and helicopter pads for seamless air travel connections.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="bg-white about-section-padding">
+        <div class="max-w-[1400px] mx-auto px-4">
+            <!-- Row 1: Small Orange Heading -->
+            <h3 class="about-small-heading text-dark-orange font-body">WHY CHOOSE US</h3>
+            
+            <!-- Row 2: Big Heading -->
+            <h2 class="about-main-heading font-bold text-black font-heading about-heading-spacing">
+                <span class="features-heading-line1">Global Excellence in</span>
+                <span class="features-heading-line2">Luxury Ground Transportation</span>
+            </h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 services-carousel-spacing">
+                <!-- 24/7 Support -->
+                <div class="feature-card hover:shadow-lg transition-shadow">
+                    <img src="assets/ic_support.svg" alt="24/7 Support" class="w-10 h-10 feature-icon">
+                    <h5 class="text-xl font-bold font-body text-dark-grey">24/7 Support & Real-time Enquiries</h5>
+                </div>
+
+                <!-- Certified Professional -->
+                <div class="feature-card hover:shadow-lg transition-shadow">
+                    <img src="assets/ic_certified.svg" alt="Certified Professional" class="w-10 h-10 feature-icon">
+                    <h5 class="text-xl font-bold font-body text-dark-grey">Certified Professional Chauffeurs & OIL</h5>
+                </div>
+
+                <!-- Global Reach -->
+                <div class="feature-card hover:shadow-lg transition-shadow">
+                    <img src="assets/ic_globe.svg" alt="Global Reach" class="w-10 h-10 feature-icon">
+                    <h5 class="text-xl font-bold font-body text-dark-grey">Global Reach & High-Primary Standards (NWDA)</h5>
+                </div>
+
+                <!-- Transparent Pricing -->
+                <div class="feature-card hover:shadow-lg transition-shadow">
+                    <img src="assets/ic_pricing.svg" alt="Transparent Pricing" class="w-10 h-10 feature-icon">
+                    <h5 class="text-xl font-bold font-body text-dark-grey">Transparent Pricing (No Hidden Charges)</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Reach Section -->
+    <section id="locations" class="bg-light-grey about-section-padding">
+        <div class="max-w-[1400px] mx-auto px-4">
+            <!-- Row 1: Small Orange Heading -->
+            <h3 class="about-small-heading text-dark-orange font-body">GLOBAL REACH</h3>
+            
+            <!-- Row 2: Big Heading -->
+            <h2 class="about-main-heading font-bold text-black font-heading about-heading-spacing">
+                <span class="locations-heading-line1">Serving Clients Worldwide with</span>
+                <span class="locations-heading-line2">Precision and Excellence.</span>
+            </h2>
+
+            <!-- Full Width Map with Absolute Location Names -->
+            <div class="relative services-carousel-spacing">
+                <!-- Full Width Map -->
+                <img src="assets/dotted-map2.svg" alt="Global Reach Map with Markers" class="w-full h-auto">
+                
+                <!-- Absolute Positioned Location Names -->
+                <ul class="absolute top-5 space-y-6">
+                    <li>
+                        <h4 class="text-lg font-bold font-body text-dark-grey">GCC Countries</h4>
+                    </li>
+                    <li>
+                        <h4 class="text-lg font-bold font-body text-dark-grey">Central Europe</h4>
+                    </li>
+                    <li>
+                        <h4 class="text-lg font-bold font-body text-dark-grey">Egypt</h4>
+                    </li>
+                    <li>
+                        <h4 class="text-lg font-bold font-body text-dark-grey">Jordan</h4>
+                    </li>
+                    <li>
+                        <h4 class="text-lg font-bold font-body text-dark-grey">India</h4>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-white text-dark-grey pt-16 pb-10">
+        <div class="nav-spacing-40">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="md:col-span-2 md:max-w-[50%]">
+                    <img src="assets/ic_logo.svg" alt="The Global Limo" class="h-8 mb-6">
+                    <p class="text-med-grey mb-6">
+                        Your Premium Partner for Roadshows and Corporate Travel with Global Excellence in Luxury Ground Transportation.
+                    </p>
+                    <div class="flex space-x-4 mt-[100px]">
+                        <a href="#" class="text-med-grey hover:text-dark-orange transition-colors">
+                            <img src="assets/ic-facebook.svg" alt="Facebook" class="w-8 h-8">
+                        </a>
+                        <a href="#" class="text-med-grey hover:text-dark-orange transition-colors">
+                            <img src="assets/ic-linkedin.svg" alt="LinkedIn" class="w-8 h-8">
+                        </a>
+                        <a href="#" class="text-med-grey hover:text-dark-orange transition-colors">
+                            <img src="assets/ic-youtube.svg" alt="YouTube" class="w-8 h-8">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6 font-heading">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-med-grey hover:text-dark-orange transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-med-grey hover:text-dark-orange transition-colors">About Us</a></li>
+                        <li><a href="#services" class="text-med-grey hover:text-dark-orange transition-colors">Services</a></li>
+                        <li><a href="#locations" class="text-med-grey hover:text-dark-orange transition-colors">Our Locations</a></li>
+                    </ul>
+                </div>
+
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6 font-heading">How to Reach Us</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <img src="assets/ic_mail.svg" alt="Email" class="w-5 h-5 mr-3">
+                            <a href="mailto:sales@thegloballimo.com" class="text-dark-orange hover:underline transition-all">sales@thegloballimo.com</a>
+                        </div>
+                        <div class="flex items-center">
+                            <img src="assets/ic_mail.svg" alt="Email" class="w-5 h-5 mr-3">
+                            <a href="mailto:info@thegloballimo.com" class="text-dark-orange hover:underline transition-all">info@thegloballimo.com</a>
+                        </div>
+                        <div class="flex items-center">
+                            <img src="assets/ic_call.svg" alt="Phone" class="w-5 h-5 mr-3">
+                            <a href="tel:+971505470868" class="text-dark-orange hover:underline transition-all">+971 50 547 0868</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-light-grey mt-12 pt-8 text-center">
+                <p class="text-med-grey">&copy; 2024 The Global Limo. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/mobile-menu.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/active-navigation.js"></script>
+</body>
+</html>
