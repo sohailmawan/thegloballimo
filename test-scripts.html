@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script Test</title>
+</head>
+<body>
+    <div id="test-results">
+        <h2>JavaScript Loading Test</h2>
+        <div id="results"></div>
+    </div>
+
+    <script>
+        const results = document.getElementById('results');
+        const scripts = [
+            'js/feature-detection.js',
+            'js/mobile-menu.js', 
+            'js/carousel.js',
+            'js/active-navigation.js',
+            'js/link-validation.js'
+        ];
+
+        function testScript(src) {
+            return new Promise((resolve, reject) => {
+                const script = document.createElement('script');
+                script.src = src;
+                script.onload = () => resolve(src);
+                script.onerror = () => reject(src);
+                document.head.appendChild(script);
+            });
+        }
+
+        async function testAllScripts() {
+            for (const scriptSrc of scripts) {
+                try {
+                    await testScript(scriptSrc);
+                    results.innerHTML += `<p style="color: green;">✅ ${scriptSrc} loaded successfully</p>`;
+                } catch (error) {
+                    results.innerHTML += `<p style="color: red;">❌ ${scriptSrc} failed to load</p>`;
+                }
+            }
+        }
+
+        testAllScripts();
+    </script>
+</body>
+</html>
