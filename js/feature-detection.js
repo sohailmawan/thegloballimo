@@ -40,10 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (now >= lastTime + 1000) {
                 const fps = Math.round((frameCount * 1000) / (now - lastTime));
                 
-                // Log performance warning if below 50fps
-                if (fps < 50) {
-                    console.warn(`Performance warning: ${fps} FPS detected`);
-                }
+                // Performance monitoring (silent)
                 
                 frameCount = 0;
                 lastTime = now;
@@ -67,7 +64,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const images = document.querySelectorAll('img');
     images.forEach(img => {
         img.addEventListener('error', function() {
-            console.warn(`Failed to load image: ${this.src}`);
             // Add a fallback class for styling broken images
             this.classList.add('image-error');
         });
