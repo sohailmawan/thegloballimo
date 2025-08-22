@@ -40,8 +40,6 @@
     
     
     <!-- Preload critical resources -->
-    <link rel="preload" href="css/tailwind.css" as="style">
-    <link rel="preload" href="css/styles.css" as="style">
     <link rel="preload" href="assets/hero-image.webp" as="image" type="image/webp">
     <link rel="preload" href="assets/ic_logo.svg" as="image" type="image/svg+xml">
     
@@ -66,19 +64,17 @@
         }
     </style>
     
-    <!-- Production Tailwind CSS - deferred -->
-    <link rel="preload" href="css/tailwind.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="css/tailwind.css"></noscript>
+    <!-- Production Tailwind CSS - blocking load to prevent FOUC -->
+    <link rel="stylesheet" href="css/tailwind.css">
+    
+    <!-- Custom CSS - blocking load to prevent FOUC -->
+    <link rel="stylesheet" href="css/styles.css">
     
     <!-- Optimized font loading with preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet"></noscript>
-    
-    <!-- Custom CSS - deferred -->
-    <link rel="preload" href="css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="css/styles.css"></noscript>
     
     <!-- Structured Data (JSON-LD) for SEO -->
     <script type="application/ld+json">
