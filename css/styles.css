@@ -405,6 +405,7 @@ a:focus {
     font-size: 18px !important;
 }
 
+
 /* Mobile Responsive Optimizations */
 @media (max-width: 768px) {
     /* Hero section mobile optimizations */
@@ -463,8 +464,11 @@ a:focus {
     /* Feature cards mobile layout */
     .feature-card {
         text-align: center;
-        padding: 20px 15px !important;
-        margin-bottom: 20px;
+        padding: 24px !important;
+        max-width: none !important;
+        min-height: auto !important;
+        width: auto !important;
+        margin: 0 !important;
     }
     
     .feature-card h5 {
@@ -474,7 +478,7 @@ a:focus {
     
     /* Feature icons mobile */
     .feature-icon {
-        margin-bottom: 16px !important;
+        margin-bottom: 12px !important;
         width: 40px !important;
         height: 40px !important;
     }
@@ -502,6 +506,11 @@ a:focus {
     /* Grid layout mobile fixes */
     .grid {
         gap: 20px !important;
+    }
+    
+    /* Feature cards grid gap mobile - override gap-6 (24px) to 16px */
+    .grid.gap-6 {
+        gap: 16px !important;
     }
     
     /* Container mobile padding */
@@ -557,6 +566,45 @@ a:focus {
     p {
         font-size: 16px !important;
         line-height: 1.5 !important;
+    }
+    
+    /* Location names horizontal layout for mobile */
+    #locations .absolute.space-y-6 {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 12px !important;
+        position: static !important;
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+        margin-top: 16px !important;
+    }
+    
+    #locations .absolute.space-y-6 li {
+        margin: 0 !important;
+    }
+    
+    #locations .absolute.space-y-6 li h4 {
+        font-size: 14px !important;
+        white-space: nowrap !important;
+        text-align: left !important;
+    }
+    
+    /* Reduce location section top spacing on mobile */
+    #locations .services-carousel-spacing {
+        margin-top: 20px !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    
+    /* Reorder: location names first, then map */
+    #locations .absolute.space-y-6 {
+        order: 1 !important;
+        margin-bottom: 16px !important;
+        margin-top: 0 !important;
+    }
+    
+    #locations img {
+        order: 2 !important;
     }
 }
 
@@ -921,9 +969,6 @@ a:focus {
     width: 100%;
 }
 
-.feature-card .feature-icon {
-    margin-bottom: 128px !important;
-}
 
 /* Carousel top spacing - 64px */
 .services-carousel-spacing,
