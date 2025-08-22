@@ -1,0 +1,21 @@
+{
+  "name": "The Global Limo",
+  "short_name": "Global Limo",
+  "description": "Global Excellence in Luxury Ground Transportation",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#F15A29",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/ic_logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["transportation", "business", "travel"],
+  "lang": "en",
+  "scope": "/"
+}

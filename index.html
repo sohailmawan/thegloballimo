@@ -6,37 +6,54 @@
     <title>The Global Limo - Luxury Ground Transportation</title>
     <meta name="description" content="Global Excellence in Luxury Ground Transportation. Your Premium Partner for Roadshows and Corporate Travel.">
     
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        // Primary Colors
-                        'dark-orange': '#F15A29',
-                        'light-orange': '#F7941D',
-                        'dark-grey': '#4A4A4A',
-                        'med-grey': '#8C8C8C',
-                        'black': '#0D0D0D',
-                        'white': '#FFFFFF',
-                        // Secondary Colors
-                        'ivory-white': '#F9F7F2',
-                        'beige': '#E6D8C3',
-                        'light-grey': '#DDDDDD'
-                    },
-                    fontFamily: {
-                        'heading': ['Poppins', 'system-ui', 'sans-serif'],
-                        'body': ['Lato', 'system-ui', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Performance optimizations -->
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://thegloballimo.com">
     
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css">
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#F15A29">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/tailwind.css" as="style">
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="assets/hero-image.webp" as="image" type="image/webp">
+    <link rel="preload" href="assets/ic_logo.svg" as="image" type="image/svg+xml">
+    
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    
+    <!-- Critical CSS inline for above-the-fold content -->
+    <style>
+        .nav-height-72{height:72px}
+        .nav-spacing-40{padding-left:40px;padding-right:40px}
+        .logo-height-24{height:24px}
+        .hero-section{height:936px;padding-top:72px}
+        .hero-overlay{background-color:rgba(0,0,0,0.4)}
+        .hero-heading{font-size:64px;line-height:1.1;color:#fff!important;display:flex;flex-direction:column;align-items:center;gap:0}
+        .hero-subheading{font-size:32px;line-height:1.3;color:#fff}
+        .hero-text-shadow{text-shadow:0 2px 4px rgba(0,0,0,0.3)}
+        @media (max-width:768px){
+          .hero-section{height:100vh;min-height:600px}
+          .hero-heading{font-size:42px}
+          .hero-subheading{font-size:24px}
+        }
+    </style>
+    
+    <!-- Production Tailwind CSS - deferred -->
+    <link rel="preload" href="css/tailwind.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/tailwind.css"></noscript>
+    
+    <!-- Optimized font loading with preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet"></noscript>
+    
+    <!-- Custom CSS - deferred -->
+    <link rel="preload" href="css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/styles.css"></noscript>
 </head>
 <body class="font-body text-dark-grey bg-white">
     <!-- Skip to content link for accessibility -->
@@ -354,11 +371,26 @@
         </div>
     </footer>
 
-    <!-- JavaScript Files -->
-    <script src="js/feature-detection.js"></script>
-    <script src="js/mobile-menu.js"></script>
-    <script src="js/carousel.js"></script>
-    <script src="js/active-navigation.js"></script>
-    <script src="js/link-validation.js"></script>
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
+                        console.log('ServiceWorker registration successful');
+                    })
+                    .catch(function(err) {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
+    
+    <!-- JavaScript Files - defer for performance -->
+    <script src="js/feature-detection.js" defer></script>
+    <script src="js/mobile-menu.js" defer></script>
+    <script src="js/carousel.js" defer></script>
+    <script src="js/active-navigation.js" defer></script>
+    <script src="js/link-validation.js" defer></script>
 </body>
 </html>
