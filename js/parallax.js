@@ -7,6 +7,15 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
     
+    // Check if device is mobile or has reduced motion preference
+    const isMobile = window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    // Disable parallax on mobile devices and for users who prefer reduced motion
+    if (isMobile || prefersReducedMotion) {
+        return;
+    }
+    
     let ticking = false;
     
     function updateParallax() {
@@ -36,6 +45,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Throttled scroll event for better performance
     window.addEventListener('scroll', requestParallaxUpdate, { passive: true });
+    
+    // Handle window resize - disable parallax if window becomes mobile size
+    window.addEventListener('resize', function() {
+        if (window.innerWidth <= 768) {
+            heroVideo.style.transform = 'none';
+            window.removeEventListener('scroll', requestParallaxUpdate);
+        }
+    });
     
     // Initial call
     updateParallax();

@@ -405,6 +405,161 @@ a:focus {
     font-size: 18px !important;
 }
 
+/* Mobile Responsive Optimizations */
+@media (max-width: 768px) {
+    /* Hero section mobile optimizations */
+    .hero-section {
+        height: 100vh !important;
+        min-height: 600px !important;
+        padding-top: 72px !important;
+    }
+    
+    .hero-section video {
+        object-position: center center; /* Better video positioning on mobile */
+    }
+    
+    /* Hero content mobile spacing */
+    .hero-content {
+        padding: 0 20px !important;
+    }
+    
+    /* Hero typography mobile adjustments */
+    .hero-heading {
+        font-size: 32px !important;
+        line-height: 1.2 !important;
+        margin-bottom: 16px !important;
+    }
+    
+    .hero-subheading {
+        font-size: 18px !important;
+        line-height: 1.4 !important;
+        margin-bottom: 24px !important;
+        padding: 0 10px;
+    }
+    
+    /* Hero CTA button mobile */
+    .hero-button-animate {
+        padding: 12px 24px !important;
+        font-size: 16px !important;
+    }
+    
+    /* Section padding mobile adjustments */
+    .about-section-padding {
+        padding: 60px 0 !important;
+    }
+    
+    /* Main headings mobile */
+    .about-main-heading {
+        font-size: 28px !important;
+        line-height: 1.3 !important;
+        margin-bottom: 20px !important;
+    }
+    
+    /* Services carousel mobile spacing */
+    .services-carousel-spacing {
+        margin-top: 40px !important;
+    }
+    
+    /* Feature cards mobile layout */
+    .feature-card {
+        text-align: center;
+        padding: 20px 15px !important;
+        margin-bottom: 20px;
+    }
+    
+    .feature-card h5 {
+        font-size: 16px !important;
+        line-height: 1.4 !important;
+    }
+    
+    /* Feature icons mobile */
+    .feature-icon {
+        margin-bottom: 16px !important;
+        width: 40px !important;
+        height: 40px !important;
+    }
+    
+    /* Navigation mobile improvements */
+    .nav-height-72 {
+        height: 60px !important;
+    }
+    
+    .nav-spacing-40 {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+    
+    /* Logo mobile size */
+    .logo-height-24 {
+        height: 20px !important;
+    }
+    
+    /* Footer mobile adjustments */
+    footer {
+        padding: 40px 0 30px !important;
+    }
+    
+    /* Grid layout mobile fixes */
+    .grid {
+        gap: 20px !important;
+    }
+    
+    /* Container mobile padding */
+    .max-w-\\[1400px\\] {
+        padding: 0 20px !important;
+    }
+    
+    /* Touch-friendly button sizes */
+    .services-arrow-btn {
+        width: 48px !important;
+        height: 48px !important;
+        min-height: 48px !important;
+    }
+    
+    /* Improved touch targets */
+    a, button {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Mobile menu improvements */
+    .mobile-menu {
+        padding: 20px !important;
+    }
+    
+    /* Better text readability on mobile */
+    body {
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+    
+    /* Prevent horizontal scroll */
+    body, html {
+        overflow-x: hidden;
+    }
+    
+    /* Services cards mobile stacking */
+    .services-card {
+        margin-bottom: 24px !important;
+    }
+    
+    .services-card img {
+        height: 200px !important;
+    }
+    
+    .services-card .px-6 {
+        padding: 16px !important;
+    }
+    
+    /* Mobile typography improvements */
+    p {
+        font-size: 16px !important;
+        line-height: 1.5 !important;
+    }
+}
+
 .hero-heading {
     font-size: 64px;
     line-height: 1.1;
