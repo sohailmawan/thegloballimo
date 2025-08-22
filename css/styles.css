@@ -259,16 +259,8 @@ a:focus {
     }
 }
 
-/* WebP image fallbacks */
+/* WebP image fallbacks - kept for video fallback only */
 .hero-bg {
-    background-image: url('assets/hero-image.jpg');
-}
-
-.no-webp .hero-bg {
-    background-image: url('assets/hero-image.jpg');
-}
-
-.webp .hero-bg {
     background-image: url('assets/hero-image.webp');
 }
 
@@ -381,10 +373,29 @@ a:focus {
 .hero-section {
     height: 936px;
     padding-top: 72px; /* Account for fixed navigation */
+    overflow: hidden; /* Ensure video doesn't overflow */
 }
 
+/* Hero video background */
+.hero-section video {
+    z-index: 1; /* Behind overlay but above everything else */
+}
+
+/* Hero overlay - ensure it appears above video */
 .hero-overlay {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2; /* Above video */
+}
+
+/* Custom text colors */
+.text-light-orange-custom {
+    color: #F7941D !important;
+}
+
+/* Services card headings */
+#services-track h3 {
+    color: #F7941D !important;
+    margin-bottom: 24px !important;
 }
 
 .hero-heading {
