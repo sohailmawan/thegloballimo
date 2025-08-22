@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Social Media Images</title>
+    <style>
+        body { 
+            font-family: 'Arial', sans-serif; 
+            margin: 0; 
+            padding: 20px; 
+            background: linear-gradient(135deg, #F15A29, #F7941D);
+        }
+        .og-image {
+            width: 1200px;
+            height: 630px;
+            background: linear-gradient(135deg, #0D0D0D 0%, #4A4A4A 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            position: relative;
+            margin: 20px 0;
+            border-radius: 12px;
+        }
+        .twitter-image {
+            width: 1200px;
+            height: 600px;
+            background: linear-gradient(135deg, #F15A29 0%, #F7941D 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            position: relative;
+            margin: 20px 0;
+            border-radius: 12px;
+        }
+        .logo-placeholder {
+            width: 200px;
+            height: 80px;
+            background: #F15A29;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 40px;
+        }
+        .title {
+            font-size: 48px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .subtitle {
+            font-size: 28px;
+            text-align: center;
+            opacity: 0.9;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .download-section {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        canvas {
+            border: 2px solid #ccc;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="download-section">
+        <h1>Social Media Images Generator</h1>
+        <p>Right-click on the images below and "Save As..." to download them for your website.</p>
+        
+        <h3>Open Graph Image (1200x630)</h3>
+        <canvas id="og-canvas" width="1200" height="630"></canvas>
+        <button onclick="downloadCanvas('og-canvas', 'og-image.jpg')">Download OG Image</button>
+        
+        <h3>Twitter Card Image (1200x600)</h3>
+        <canvas id="twitter-canvas" width="1200" height="600"></canvas>
+        <button onclick="downloadCanvas('twitter-canvas', 'twitter-image.jpg')">Download Twitter Image</button>
+        
+        <h3>Favicon (32x32)</h3>
+        <canvas id="favicon-canvas" width="32" height="32"></canvas>
+        <button onclick="downloadCanvas('favicon-canvas', 'favicon-32x32.png')">Download Favicon</button>
+        
+        <h3>Apple Touch Icon (180x180)</h3>
+        <canvas id="apple-canvas" width="180" height="180"></canvas>
+        <button onclick="downloadCanvas('apple-canvas', 'apple-touch-icon.png')">Download Apple Icon</button>
+    </div>
+
+    <script>
+        // Create Open Graph Image
+        function createOGImage() {
+            const canvas = document.getElementById('og-canvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Background gradient
+            const gradient = ctx.createLinearGradient(0, 0, 1200, 630);
+            gradient.addColorStop(0, '#0D0D0D');
+            gradient.addColorStop(1, '#4A4A4A');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 1200, 630);
+            
+            // Logo area
+            ctx.fillStyle = '#F15A29';
+            ctx.fillRect(500, 150, 200, 80);
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 24px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('GLOBAL LIMO', 600, 200);
+            
+            // Title
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 48px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('The Global Limo', 600, 280);
+            
+            // Subtitle
+            ctx.font = '28px Arial';
+            ctx.fillText('Luxury Ground Transportation', 600, 320);
+            
+            // Tagline
+            ctx.font = '24px Arial';
+            ctx.fillStyle = '#E6D8C3';
+            ctx.fillText('Your Premium Partner for Roadshows and Corporate Travel', 600, 380);
+            
+            // Website
+            ctx.font = '20px Arial';
+            ctx.fillStyle = '#F7941D';
+            ctx.fillText('thegloballimo.com', 600, 420);
+        }
+        
+        // Create Twitter Image
+        function createTwitterImage() {
+            const canvas = document.getElementById('twitter-canvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Background gradient
+            const gradient = ctx.createLinearGradient(0, 0, 1200, 600);
+            gradient.addColorStop(0, '#F15A29');
+            gradient.addColorStop(1, '#F7941D');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 1200, 600);
+            
+            // Logo area
+            ctx.fillStyle = 'rgba(255,255,255,0.2)';
+            ctx.fillRect(500, 120, 200, 80);
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 24px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('GLOBAL LIMO', 600, 170);
+            
+            // Title
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 44px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('Global Excellence in', 600, 240);
+            ctx.fillText('Luxury Transportation', 600, 290);
+            
+            // Tagline
+            ctx.font = '24px Arial';
+            ctx.fillText('Premium Partner for Corporate Travel', 600, 340);
+            
+            // Services
+            ctx.font = '18px Arial';
+            ctx.fillText('Corporate Travel • Roadshows • VIP Transport • Airport Transfers', 600, 380);
+        }
+        
+        // Create Favicon
+        function createFavicon() {
+            const canvas = document.getElementById('favicon-canvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Background
+            ctx.fillStyle = '#F15A29';
+            ctx.fillRect(0, 0, 32, 32);
+            
+            // Simple logo representation
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 20px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('GL', 16, 22);
+        }
+        
+        // Create Apple Touch Icon
+        function createAppleIcon() {
+            const canvas = document.getElementById('apple-canvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Background with rounded corners effect
+            ctx.fillStyle = '#F15A29';
+            ctx.fillRect(0, 0, 180, 180);
+            
+            // Logo area
+            ctx.fillStyle = 'rgba(255,255,255,0.1)';
+            ctx.fillRect(20, 60, 140, 60);
+            
+            // Text
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 24px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('GLOBAL', 90, 85);
+            ctx.fillText('LIMO', 90, 110);
+        }
+        
+        // Download function
+        function downloadCanvas(canvasId, filename) {
+            const canvas = document.getElementById(canvasId);
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+        
+        // Generate images when page loads
+        window.onload = function() {
+            createOGImage();
+            createTwitterImage();
+            createFavicon();
+            createAppleIcon();
+        }
+    </script>
+</body>
+</html>

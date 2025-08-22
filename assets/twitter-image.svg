@@ -1,0 +1,26 @@
+<svg width="1200" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="twitterGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F15A29;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F7941D;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="600" fill="url(#twitterGradient)"/>
+  
+  <!-- Logo area with subtle background -->
+  <rect x="500" y="120" width="200" height="80" fill="rgba(255,255,255,0.2)" rx="8"/>
+  <text x="600" y="170" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">GLOBAL LIMO</text>
+  
+  <!-- Main title -->
+  <text x="600" y="240" font-family="Arial, sans-serif" font-size="44" font-weight="bold" fill="white" text-anchor="middle">Global Excellence in</text>
+  <text x="600" y="290" font-family="Arial, sans-serif" font-size="44" font-weight="bold" fill="white" text-anchor="middle">Luxury Transportation</text>
+  
+  <!-- Tagline -->
+  <text x="600" y="340" font-family="Arial, sans-serif" font-size="24" fill="white" text-anchor="middle">Premium Partner for Corporate Travel</text>
+  
+  <!-- Services -->
+  <text x="600" y="380" font-family="Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.9)" text-anchor="middle">Corporate Travel • Roadshows • VIP Transport • Airport Transfers</text>
+</svg>

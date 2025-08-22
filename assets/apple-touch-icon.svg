@@ -1,0 +1,11 @@
+<svg width="180" height="180" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="180" height="180" fill="#F15A29" rx="20"/>
+  
+  <!-- Logo area with subtle background -->
+  <rect x="20" y="60" width="140" height="60" fill="rgba(255,255,255,0.1)" rx="8"/>
+  
+  <!-- Text -->
+  <text x="90" y="85" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">GLOBAL</text>
+  <text x="90" y="110" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">LIMO</text>
+</svg>
