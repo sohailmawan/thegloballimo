@@ -210,12 +210,16 @@ html {
 
 /* Improved focus states for all interactive elements */
 button:focus,
-a:focus,
 input:focus,
 textarea:focus,
 select:focus {
     outline: 2px solid #F15A29;
     outline-offset: 2px;
+}
+
+/* Remove focus outline for anchors */
+a:focus {
+    outline: none;
 }
 
 /* Skip to content link for keyboard navigation */
