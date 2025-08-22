@@ -9,12 +9,14 @@ document.addEventListener('DOMContentLoaded', function() {
         if (isHidden) {
             mobileMenu.classList.remove('hidden');
             mobileMenuBtn.setAttribute('aria-expanded', 'true');
+            mobileMenuBtn.classList.add('mobile-menu-open');
             // Focus first link when opened
             const firstLink = mobileMenu.querySelector('a');
             if (firstLink) firstLink.focus();
         } else {
             mobileMenu.classList.add('hidden');
             mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            mobileMenuBtn.classList.remove('mobile-menu-open');
         }
     }
 
@@ -26,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', () => {
             mobileMenu.classList.add('hidden');
             mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            mobileMenuBtn.classList.remove('mobile-menu-open');
         });
     });
 
@@ -34,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
             mobileMenu.classList.add('hidden');
             mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            mobileMenuBtn.classList.remove('mobile-menu-open');
             mobileMenuBtn.focus();
         }
     });
@@ -44,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!mobileMenu.classList.contains('hidden')) {
                 mobileMenu.classList.add('hidden');
                 mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                mobileMenuBtn.classList.remove('mobile-menu-open');
             }
         }
     });

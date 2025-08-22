@@ -606,6 +606,132 @@ a:focus {
     #locations img {
         order: 2 !important;
     }
+    
+    /* Mobile menu icon improvements */
+    #mobile-menu-btn {
+        outline: none !important;
+        position: relative;
+        width: 32px;
+        height: 32px;
+    }
+    
+    /* Hamburger to cross animation */
+    .mobile-menu-icon {
+        position: relative;
+        width: 24px;
+        height: 2px;
+        background-color: #4A4A4A;
+        transition: all 0.3s ease;
+        margin: auto;
+    }
+    
+    .mobile-menu-icon::before,
+    .mobile-menu-icon::after {
+        content: '';
+        position: absolute;
+        width: 24px;
+        height: 2px;
+        background-color: #4A4A4A;
+        transition: all 0.3s ease;
+    }
+    
+    .mobile-menu-icon::before {
+        top: -8px;
+    }
+    
+    .mobile-menu-icon::after {
+        top: 8px;
+    }
+    
+    /* Cross state when menu is open */
+    .mobile-menu-open .mobile-menu-icon {
+        background-color: transparent;
+    }
+    
+    .mobile-menu-open .mobile-menu-icon::before {
+        transform: rotate(45deg);
+        top: 0;
+    }
+    
+    .mobile-menu-open .mobile-menu-icon::after {
+        transform: rotate(-45deg);
+        top: 0;
+    }
+    
+    /* Full width content for about, services, and locations sections on mobile */
+    #about .max-w-\\[1400px\\],
+    #services .max-w-\\[1400px\\],
+    #locations .max-w-\\[1400px\\] {
+        max-width: none !important;
+        padding: 0 !important;
+    }
+    
+    /* All sections keep padding for content readability */
+    #about .px-4,
+    #services .px-4,
+    #locations .px-4 {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+    
+    /* Override about section width constraints on mobile */
+    #about .about-heading-75,
+    #about .about-logo-25,
+    #about .about-paragraph-50 {
+        width: 100% !important;
+        max-width: none !important;
+    }
+    
+    /* Make about section truly full width */
+    #about {
+        width: 100% !important;
+    }
+    
+    /* About section mobile layout reordering */
+    #about .max-w-\\[1400px\\] {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    
+    /* Order: 1. Logo symbol, 2. Heading, 3. Paragraph */
+    #about .about-logo-25 {
+        order: 1 !important;
+        margin-bottom: 16px !important;
+        text-align: left !important;
+        display: block !important;
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+    }
+    
+    #about .about-logo-25 img {
+        width: 60px !important;
+        height: 60px !important;
+        display: block !important;
+        margin: 0 !important;
+    }
+    
+    #about .about-heading-75 {
+        order: 2 !important;
+        margin-bottom: 16px !important;
+        text-align: left !important;
+    }
+    
+    #about .about-paragraph-50 {
+        order: 3 !important;
+        text-align: left !important;
+    }
+    
+    /* Hide nav link underlines in mobile view */
+    .nav-link::after {
+        display: none !important;
+    }
+    
+    /* Hide any orange lines in header on mobile */
+    header .nav-link.active::after,
+    header .nav-link:not(.active)::after,
+    header .nav-link:hover::after {
+        display: none !important;
+    }
 }
 
 .hero-heading {
