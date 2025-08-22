@@ -400,6 +400,11 @@ a:focus {
     margin-bottom: 24px !important;
 }
 
+/* WHY CHOOSE US section card headings - 18px font size */
+.feature-card h5 {
+    font-size: 18px !important;
+}
+
 .hero-heading {
     font-size: 64px;
     line-height: 1.1;
